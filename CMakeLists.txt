@@ -9,5 +9,5 @@ LIST(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/sdl2)
 find_package(SDL2 REQUIRED)
 find_package(SDL2_image REQUIRED)
 
-add_executable(spacemed main.cpp)
+add_executable(spacemed main.cpp src/App.cpp src/App.hpp)
 target_link_libraries(spacemed SDL2::Main SDL2::Image)
