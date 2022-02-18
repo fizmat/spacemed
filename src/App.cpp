@@ -6,7 +6,7 @@
 #include "SDL_image.h"
 
 App::App()
-	: m_renderer{}, m_window{} {
+	: m_background{}, m_renderer{}, m_window{}, m_texture_manager{} {
   if (SDL_Init(SDL_INIT_VIDEO) < 0) {
 	SDL_Log("Failed to initialize SDL: %s", SDL_GetError());
   }
@@ -35,11 +35,22 @@ App::App()
   if (IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG)==0) {
 	SDL_Log("Failed to initialize SDL Image: %s", SDL_GetError());
   }
+
+  // Load first image
+  m_texture_manager = new TextureManager(m_renderer);
+  m_background = m_texture_manager->LoadTexture("gfx/background.png");
 }
 
 void App::Draw() {
   SDL_SetRenderDrawColor(m_renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
   SDL_RenderClear(m_renderer);
+
+  auto dest_rect = SDL_Rect{
+	.w = 640,
+	.h = 360,
+  };
+  SDL_RenderCopy(m_renderer, m_background, nullptr, &dest_rect);
+
   SDL_RenderPresent(m_renderer);
 }
 

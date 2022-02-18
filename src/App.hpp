@@ -6,6 +6,7 @@
 #define SPACEMED_APP_HPP
 
 #include "SDL.h"
+#include "TextureManager.hpp"
 
 class App {
  public:
@@ -22,6 +23,8 @@ class App {
 
   SDL_Window *m_window;
   SDL_Renderer *m_renderer;
+  TextureManager *m_texture_manager;
+  SDL_Texture *m_background;
 };
 
 #endif //SPACEMED_APP_HPP
