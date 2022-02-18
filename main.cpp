@@ -1,8 +1,8 @@
 #include "src/App.hpp"
 
 int main() {
-	App app{};
-	app.Process();
+  App app{};
+  app.Process();
 
-    return 0;
+  return 0;
 }

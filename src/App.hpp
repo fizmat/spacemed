@@ -8,16 +8,20 @@
 #include "SDL.h"
 
 class App {
-public:
-	App();
-	~App();
+ public:
+  App();
+  ~App();
 
-	void Process();
-private:
-	void Draw();
+  App(App &app) = delete; // disable copying
+  App(App &&app) = delete; // disable moving
 
-	SDL_Window* m_window;
-	SDL_Renderer* m_renderer;
+  void Process();
+
+ private:
+  void Draw();
+
+  SDL_Window *m_window;
+  SDL_Renderer *m_renderer;
 };
 
 #endif //SPACEMED_APP_HPP
