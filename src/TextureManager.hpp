@@ -10,8 +10,9 @@
 
 #include "SDL.h"
 
-class TextureManager {
- public:
+class TextureManager
+{
+public:
   explicit TextureManager(SDL_Renderer *renderer) : m_renderer{renderer} {}
   ~TextureManager();
 
@@ -19,9 +20,9 @@ class TextureManager {
   SDL_Texture *GetTexture(const std::string &key);
   void LoadFromDirectory(const std::string &folder);
 
- private:
+private:
   std::map<std::string, SDL_Texture *> m_tex_map;
   SDL_Renderer *m_renderer;
 };
 
-#endif //SPACEMED_SRC_TEXTUREMANAGER_HPP_
+#endif // SPACEMED_SRC_TEXTUREMANAGER_HPP_

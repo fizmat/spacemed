@@ -8,17 +8,18 @@
 #include "SDL.h"
 #include "TextureManager.hpp"
 
-class App {
- public:
+class App
+{
+public:
   App();
   ~App();
 
-  App(App &app) = delete; // disable copying
+  App(App &app) = delete;  // disable copying
   App(App &&app) = delete; // disable moving
 
   void Process();
 
- private:
+private:
   void Draw();
 
   SDL_Window *m_window;
@@ -27,4 +28,4 @@ class App {
   SDL_Texture *m_background;
 };
 
-#endif //SPACEMED_APP_HPP
+#endif // SPACEMED_APP_HPP
