@@ -8,8 +8,7 @@
 #include "SDL.h"
 #include "TextureManager.hpp"
 
-class App
-{
+class App {
 public:
   App();
   ~App();

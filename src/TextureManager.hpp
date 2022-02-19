@@ -10,8 +10,7 @@
 
 #include "SDL.h"
 
-class TextureManager
-{
+class TextureManager {
 public:
   explicit TextureManager(SDL_Renderer *renderer) : m_renderer{renderer} {}
   ~TextureManager();
