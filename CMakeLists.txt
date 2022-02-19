@@ -11,3 +11,6 @@ find_package(SDL2_image REQUIRED)
 
 add_executable(spacemed main.cpp src/App.cpp src/App.hpp src/TextureManager.cpp src/TextureManager.hpp)
 target_link_libraries(spacemed SDL2::Main SDL2::Image)
+
+# This takes care of copying the images so that I don't have to do that for each install target
+FILE(COPY ./gfx DESTINATION ${CMAKE_BINARY_DIR})
