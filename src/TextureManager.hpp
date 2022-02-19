@@ -17,6 +17,7 @@ class TextureManager {
 
   SDL_Texture *LoadTexture(const std::string &filename);
   SDL_Texture *GetTexture(const std::string &key);
+  void LoadFromDirectory(const std::string &folder);
 
  private:
   std::map<std::string, SDL_Texture *> m_tex_map;

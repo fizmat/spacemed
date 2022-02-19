@@ -4,6 +4,7 @@
 
 #include "App.hpp"
 #include "SDL_image.h"
+#include <filesystem>
 
 App::App()
 	: m_background{}, m_renderer{}, m_window{}, m_texture_manager{} {
@@ -38,7 +39,8 @@ App::App()
 
   // Load first image
   m_texture_manager = new TextureManager(m_renderer);
-  m_background = m_texture_manager->LoadTexture("gfx/background.png");
+  m_texture_manager->LoadFromDirectory("gfx");
+  m_background = m_texture_manager->GetTexture("gfx/background.png");
 }
 
 void App::Draw() {
