@@ -30,5 +30,5 @@ SDL_Texture *TextureManager::GetTexture(const std::string &key) {
 void TextureManager::LoadFromDirectory(const std::string &folder) {
   using std::filesystem::recursive_directory_iterator;
   for (const auto &file : recursive_directory_iterator(folder))
-	this->LoadTexture(file.path());
+	this->LoadTexture(file.path().string());
 }
