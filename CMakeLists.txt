@@ -5,6 +5,9 @@ set(CMAKE_CXX_STANDARD 20)
 
 LIST(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/sdl2)
 
+# set(ENV{SDL2DIR} ${CMAKE_CURRENT_SOURCE_DIR}/sdl2)
+# set(SDL2_PATH ${CMAKE_CURRENT_SOURCE_DIR}/sdl2 CACHE STRING "custom SDL2 path")
+
 # Find SDL2, SDL2_image and SDL2_gfx libraries
 find_package(SDL2 REQUIRED)
 find_package(SDL2_image REQUIRED)
